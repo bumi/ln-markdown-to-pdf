@@ -24,7 +24,10 @@ Usage details about the [rack lightning middleware can be found here](https://gi
 
 ## API endpoints
 
-The application is deployed on [https://lightning-2pdf.herokuapp.com](https://lightning-2pdf.herokuapp.com) and exposes the following endpoints:
+The application is deployed on [https://lightning-2pdf.herokuapp.com](https://lightning-2pdf.herokuapp.com) and connected
+to the [lightning node on 79.137.71.183](https://1ml.com/testnet/node/038474ec195f497cf4036e5994bd820dd365bb0aaa7fb42bd9b536913a1a2dcc9e)
+
+The following endpoints are available:
 
 ### /convert/pdf
 
@@ -36,6 +39,8 @@ converts the markdown in the request body to HTML and returns the html file cont
 
 
 ## Client
+
+**requirements:** you need a running lnd node with funded, open channels. Check the [lnd github page](https://github.com/lightningnetwork/lnd/#readme) for information about lnd.
 
 The API client uses the [faraday HTTP library](https://github.com/lostisland/faraday) and the [faraday_ln_paywall middleware](https://github.com/bumi/faraday_ln_paywall) to automatically pay the lightning invoice for every request.
 
