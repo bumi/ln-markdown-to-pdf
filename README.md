@@ -14,6 +14,10 @@ This is a simple [Sinatra.rb app](http://sinatrarb.com/) that uses the [rack-lig
 payment in a `X-Preimage` header. 
 3. Now the lightning middleware checks the if the invoice was paid and proceeds to the sinatra app doing the convertion.
 
+### Video Demo
+
+I've made a [video](https://vimeo.com/302338717) giving an overview of the setup and showing how it works: [https://vimeo.com/302338717](https://vimeo.com/302338717)
+
 
 Have a look at the server code: 
 
