@@ -6,6 +6,15 @@ This app exposes HTTP endpoints to convert markdown files to HTML or PDF after t
 
 This is a simple [Sinatra.rb app](http://sinatrarb.com/) that uses the [rack-lightning middleware](https://github.com/bumi/rack-lightning) to handle lightning invoices.
 
+
+## How does it work? 
+
+1. If no proof of payment is provided the rack lightning middleware creates a Lightning invoice and returns a `402 Payment Required` HTTP status code with a `application/vnd.lightning.bolt11` header and a Lightning invoice as a body. 
+2. The client pays the invoice and does a second request providing the proof of payment / the preimage of the Lightning
+payment in a `X-Preimage` header. 
+3. Now the lightning middleware checks the if the invoice was paid and proceeds to the sinatra app doing the convertion.
+
+
 Have a look at the server code: 
 
 * [config.ru](https://github.com/bumi/ln-markdown-to-pdf/blob/master/config.ru#L9) - where the magic happens: loading the lightning middleware
@@ -28,7 +37,7 @@ converts the markdown in the request body to HTML and returns the html file cont
 
 ## Client
 
-The API client uses faraday and the faraday_ln_paywall middleware to automatically pay the lightning invoice for every request.
+The API client uses the [faraday HTTP library](https://github.com/lostisland/faraday) and the [faraday_ln_paywall middleware](https://github.com/bumi/faraday_ln_paywall) to automatically pay the lightning invoice for every request.
 
 Have a look at the [code in client.rb](https://github.com/bumi/ln-markdown-to-pdf/blob/master/client.rb) and have a look at the [faraday lightning middleware](https://github.com/bumi/faraday_ln_paywall#readme)
 
