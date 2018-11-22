@@ -7,6 +7,11 @@ This app exposes HTTP endpoints to convert markdown files to HTML or PDF after t
 This is a simple [Sinatra.rb app](http://sinatrarb.com/) that uses the [rack-lightning middleware](https://github.com/bumi/rack-lightning) to handle lightning invoices.
 
 
+### Video Demo
+
+I've made a [video](https://vimeo.com/302338717) giving an overview of the setup and showing how it works: [https://vimeo.com/302338717](https://vimeo.com/302338717)
+
+
 ## How does it work? 
 
 1. If no proof of payment is provided the rack lightning middleware creates a Lightning invoice and returns a `402 Payment Required` HTTP status code with a `application/vnd.lightning.bolt11` content type header and a Lightning invoice as a body. 
@@ -21,15 +26,10 @@ Have a look at the server code:
 
 Usage details about the [rack lightning middleware can be found here](https://github.com/bumi/rack-lightning)
 
-## Requirements
+### Requirements
 
 Server and client are using connecting (gRPC) to the [Lightning Network Daemon(lnd)](https://github.com/lightningnetwork/lnd/) to create and pay invoices..
 A running node with funded channels is required. Details about lnd can be found on their [github page](https://github.com/lightningnetwork/lnd/)
-
-
-### Video Demo
-
-I've made a [video](https://vimeo.com/302338717) giving an overview of the setup and showing how it works: [https://vimeo.com/302338717](https://vimeo.com/302338717)
 
 
 ## API endpoints
