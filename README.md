@@ -9,7 +9,7 @@ This is a simple [Sinatra.rb app](http://sinatrarb.com/) that uses the [rack-lig
 
 ## How does it work? 
 
-1. If no proof of payment is provided the rack lightning middleware creates a Lightning invoice and returns a `402 Payment Required` HTTP status code with a `application/vnd.lightning.bolt11` header and a Lightning invoice as a body. 
+1. If no proof of payment is provided the rack lightning middleware creates a Lightning invoice and returns a `402 Payment Required` HTTP status code with a `application/vnd.lightning.bolt11` content type header and a Lightning invoice as a body. 
 2. The client pays the invoice and does a second request providing the proof of payment / the preimage of the Lightning
 payment in a `X-Preimage` header. 
 3. Now the lightning middleware checks the if the invoice was paid and proceeds to the sinatra app doing the convertion.
