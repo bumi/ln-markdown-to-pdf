@@ -30,7 +30,7 @@ GEM
     eventmachine_httpserver (0.2.1)
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
-    faraday_ln_paywall (0.1.0)
+    faraday_ln_paywall (0.1.1)
       faraday (> 0.8)
       grpc (>= 1.16.0)
       lightning-invoice (~> 0.1.2)
