@@ -8,8 +8,8 @@ This is a simple [Sinatra.rb app](http://sinatrarb.com/) that uses the [rack-lig
 
 Have a look at the server code: 
 
-* [config.ru]() - loading the lightning middleware
-* [converter.rb]() - the actual sinatra app (no lightning related code in here; all handled by the middleware)
+* [config.ru](https://github.com/bumi/ln-markdown-to-pdf/blob/master/config.ru#L9) - where the magic happens: loading the lightning middleware
+* [converter.rb](https://github.com/bumi/ln-markdown-to-pdf/blob/master/converter.rb) - the actual sinatra app (no lightning related code in here; all handled by the middleware)
 
 Usage details about the [rack lightning middleware can be found here](https://github.com/bumi/rack-lightning)
 
@@ -30,7 +30,7 @@ converts the markdown in the request body to HTML and returns the html file cont
 
 The API client uses faraday and the faraday_ln_paywall middleware to automatically pay the lightning invoice for every request.
 
-Have a look at the [code in client.rb]() and have a look at the [faraday lightning middleware](https://github.com/bumi/faraday_ln_paywall#readme)
+Have a look at the [code in client.rb](https://github.com/bumi/ln-markdown-to-pdf/blob/master/client.rb) and have a look at the [faraday lightning middleware](https://github.com/bumi/faraday_ln_paywall#readme)
 
 ### Usage:
 
@@ -39,8 +39,8 @@ Have a look at the [code in client.rb]() and have a look at the [faraday lightni
     $ # example:
     $ ruby client.rb ./README.md html
 
-The client is using default lnd settings and loads `~/.lnd/data/chain/bitcoin/testnet/admin.macaroon` and `~/.lnd/tls.cert``
-You can configure that in the [faraday middleware](). ([documentation](https://github.com/bumi/faraday_ln_paywall#configuration))
+The client is using default lnd settings and loads `~/.lnd/data/chain/bitcoin/testnet/admin.macaroon` and `~/.lnd/tls.cert`
+You can configure that in the [faraday middleware](https://github.com/bumi/ln-markdown-to-pdf/blob/master/client.rb#L7). ([documentation](https://github.com/bumi/faraday_ln_paywall#configuration))
 
 ## Questions?
 
