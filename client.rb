@@ -20,4 +20,4 @@ end
 content = File.read(ARGV[0])
 format = ARGV[1] || 'html'
 
-puts conn.post("/#{format}", content).body
+puts conn.post("/convert/#{format}", content).body
