@@ -21,6 +21,11 @@ Have a look at the server code:
 
 Usage details about the [rack lightning middleware can be found here](https://github.com/bumi/rack-lightning)
 
+## Requirements
+
+Server and client are using connecting (gRPC) to the [Lightning Network Daemon(lnd)](https://github.com/lightningnetwork/lnd/) to create and pay invoices..
+A running node with funded channels is required. Details about lnd can be found on their [github page](https://github.com/lightningnetwork/lnd/)
+
 
 ### Video Demo
 
