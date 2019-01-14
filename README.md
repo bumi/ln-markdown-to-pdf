@@ -39,11 +39,11 @@ to the [lightning node on 79.137.71.183](https://1ml.com/testnet/node/038474ec19
 
 The following endpoints are available:
 
-### /convert/pdf
+### POST /convert/pdf
 
 converts markdown in the request body to PDF and returns the PDF file content
 
-### /convert/html
+### POST /convert/html
 
 converts the markdown in the request body to HTML and returns the html file content
 
